@@ -18,4 +18,5 @@ do_link () {
 if [ -d ./.git -a "${PWD}" == "${DOTFILES}" ] ; then
     do_link "${DOTFILES}/.config/subtle" "${HOME}/.config/subtle"
     do_link "${DOTFILES}/.Xresources" "${HOME}/.Xresources"
+    do_link "${DOTFILES}/.tmux.conf" "${HOME}/.tmux.conf"
 fi
