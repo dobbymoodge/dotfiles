@@ -15,6 +15,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes (quote (birds-of-paradise-plus)))
  '(custom-safe-themes (quote ("8281168b824a806489ca7d22e60bb15020bf6eecd64c25088c85b3fd806fc341" default)))
  '(menu-bar-mode nil)
  '(tool-bar-mode nil))
