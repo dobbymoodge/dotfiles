@@ -18,6 +18,7 @@
  '(custom-enabled-themes (quote (birds-of-paradise-plus)))
  '(custom-safe-themes (quote ("8281168b824a806489ca7d22e60bb15020bf6eecd64c25088c85b3fd806fc341" default)))
  '(menu-bar-mode nil)
+ '(safe-local-variable-values (quote ((encoding . utf-8))))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
