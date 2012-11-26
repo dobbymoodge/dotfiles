@@ -607,6 +607,7 @@ end
 # Simple tags
 tag "terms",   "xterm|[u]?rxvt"
 tag "browser", "uzbl|opera|firefox|navigator|Google-chrome"
+tag "pw", "keepassx"
 
 tag "rdesktop", "rdesktop"
 
@@ -727,6 +728,7 @@ view "terms", "terms|default"
 view "www",   "browser"
 # view "gimp",  "gimp_.*"
 view "dev",   "editor"
+view "pw", "pw"
 view "rdesktop", "rdesktop"
 
 #
