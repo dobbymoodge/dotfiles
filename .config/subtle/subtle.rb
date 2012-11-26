@@ -400,7 +400,7 @@ grab "W-Up",    :WindowUp
 grab "W-Right", :WindowRight
 
 # Kill current window
-grab "W-S-k", :WindowKill
+grab "W-F12 W-k", :WindowKill
 
 # Cycle between given gravities
 grab "W-KP_7", [ :top_left,     :top_left66,     :top_left33     ]
@@ -414,24 +414,26 @@ grab "W-KP_2", [ :bottom,       :bottom66,       :bottom33       ]
 grab "W-KP_3", [ :bottom_right, :bottom_right66, :bottom_right33 ]
 
 # In case no numpad is available e.g. on notebooks
-grab "W-q", [ :top_left,     :top_left66,     :top_left33     ]
-grab "W-w", [ :top,          :top66,          :top33          ]
-grab "W-e", [ :top_right,    :top_right66,    :top_right33    ]
-grab "W-a", [ :left,         :left66,         :left33         ]
-grab "W-s", [ :center,       :center66,       :center33       ]
-grab "W-d", [ :right,        :right66,        :right33        ]
+grab "W-S-u", [ :top_left,     :top_left66,     :top_left33     ]
+grab "W-S-i", [ :top,          :top66,          :top33          ]
+grab "W-S-o", [ :top_right,    :top_right66,    :top_right33    ]
+grab "W-S-j", [ :left,         :left66,         :left33         ]
+grab "W-S-k", [ :center,       :center66,       :center33       ]
+grab "W-S-l", [ :right,        :right66,        :right33        ]
 #
 # QUERTZ
 #grab "W-y", [ :bottom_left,  :bottom_left66,  :bottom_left33  ]
 #
 # QWERTY
-grab "W-z", [ :bottom_left,  :bottom_left66,  :bottom_left33  ]
+grab "W-S-m", [ :bottom_left,  :bottom_left66,  :bottom_left33  ]
 #
-grab "W-x", [ :bottom,       :bottom66,       :bottom33       ]
-grab "W-c", [ :bottom_right, :bottom_right66, :bottom_right33 ]
+grab "W-S-,", [ :bottom,       :bottom66,       :bottom33       ]
+grab "W-S-.", [ :bottom_right, :bottom_right66, :bottom_right33 ]
 
 # Exec programs
 grab "W-Return", "urxvt"
+grab "W-F12 r", "dmenu_run -b"
+grab "A-minus r", "dmenu_run -b"
 
 # Run Ruby lambdas
 grab "S-F2" do |c|
