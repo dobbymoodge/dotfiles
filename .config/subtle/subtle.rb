@@ -434,6 +434,7 @@ grab "W-S-.", [ :bottom_right, :bottom_right66, :bottom_right33 ]
 grab "W-Return", "urxvt"
 grab "W-F12 r", "dmenu_run -b"
 grab "A-minus r", "dmenu_run -b"
+grab "A-minus l", "xscreensaver-command -lock"
 
 # Run Ruby lambdas
 grab "S-F2" do |c|
