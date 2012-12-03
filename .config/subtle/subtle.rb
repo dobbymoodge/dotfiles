@@ -768,12 +768,17 @@ view "rdesktop", "rdesktop"
 #
 # === Example
 #
- sublet :clock do
-   interval      1
-   foreground    "#eeeeee"
-   background    "#000000"
-   format_string "%H:%M:%S"
- end
+sublet :clock do
+  interval      1
+  foreground    "#eeeeee"
+  background    "#000000"
+  format_string "%H:%M:%S"
+end
+
+sublet :battery do
+  colors 10 => "#ff0000", 30 => "#fff000"
+end
+
 #
 #  === Link
 #
