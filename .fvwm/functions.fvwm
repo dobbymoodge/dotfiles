@@ -1,0 +1,225 @@
+
+###################################################
+# Host-specific configuration:
+
+DestroyFunc Basic-Setup
+AddToFunc Basic-Setup
++ I Module FvwmButtons FBPagerDock
++ I Module FvwmCommandS
++ I Exec exec xscreensaver
++ I Exec exec xsetroot -mod 2 2 -fg 'dark slate grey' -bg 'RoyalBlue4'
++ I Exec exec xfce4-panel
++ I Exec exec start_workrave
++ I Echo done with basic setup...
+
+Piperead 'echo SetEnv SCREEN_WIDTH $(( $[vp.width]-61 ))'
+
+###################################################
+# Host-specific keybindings
+
+Key Tab A M -
+Key Tab A M WindowList (CurrentGlobalPage) Root c c NoGeometry, CurrentAtEnd, SelectOnRelease Alt_R
+
+
+###################################################
+# Generic configuration:
+
+DestroyFunc InitFunction
+AddToFunc InitFunction "I" Echo initializing...
++ I Basic-Setup
++ I Echo ready...
+
+AddToFunc RestartFunction "I" Echo restarting...
++ "I" Function Basic-Setup
+
+DestroyFunc rsz_Full_Height
+AddToFunc rsz_Full_Height
++ I ResizeMove frame keep 100 keep 0
+
+DestroyFunc rsz_Top_Half
+AddToFunc rsz_Top_Half
++ I ResizeMove frame keep 50 keep 0
+
+DestroyFunc rsz_Bottom_Half
+AddToFunc rsz_Bottom_Half
++ I ResizeMove frame keep 50 keep 50
+
+DestroyFunc Prod_Xterm
+AddToFunc Prod_Xterm
++ I Exec exec xterm -fg 'light coral' -bg '#330000'
+
+DestroyFunc Dev_Xterm
+AddToFunc Dev_Xterm
++ I Exec exec xterm -fg 'aquamarine' -bg '#003300'
+
+###################################################
+# Keybindings
+
+Key L A CM Exec exec xscreensaver-command -lock
+Key minus A M Menu PKMenu Nop
+
+###################################################
+# Mouse-bindings
+
+# Pull up window operations when left-clicking leftmost (only)
+# titlebar button
+Mouse 0 1 N Menu MenuFvwmWindowOps Nop
+Mouse 0 1 C Close
+
+# Disable builtin mouse-move bindings and use my own:
+Mouse 1 T   A -
+Mouse 2 FST A -
+
+Mouse 1 T   C FuncFvwmRaiseLowerX Move
+
+# Root window mouse bindings
+Mouse 1 R A Menu Root-Menu Nop
+Mouse 2 R A Menu MenuFvwmWindowOps Nop
+Mouse 3 R A WindowList
+
+###################################################
+# Window management functions and keymappings
+
+Key F A S4 Resize w+5c keep
+Key S A S4 Resize w-5c keep
+Key E A S4 Resize keep w-5c
+Key D A S4 Resize keep w+5c
+
+Key F A CS4 Resize w+15c keep
+Key S A CS4 Resize w-15c keep
+Key E A CS4 Resize keep w-15c
+Key D A CS4 Resize keep w+15c
+
+# Key F A MS4 Resize w+15c keep
+# Key S A MS4 Resize w-15c keep
+Key E A MS4 ResizeMove frame keep 50 keep 0
+Key D A MS4 ResizeMove frame keep 50 keep 50
+
+Key (XTerm) F A S4 Resize w+1c keep
+Key (XTerm) S A S4 Resize w-1c keep
+Key (XTerm) E A S4 Resize keep w-1c
+Key (XTerm) D A S4 Resize keep w+1c
+
+Key (XTerm) F A CS4 Resize w+3c keep
+Key (XTerm) S A CS4 Resize w-3c keep
+Key (XTerm) E A CS4 Resize keep w-3c
+Key (XTerm) D A CS4 Resize keep w+3c
+
+Key (emacs) F A S4 Resize w+1c keep
+Key (emacs) S A S4 Resize w-1c keep
+Key (emacs) E A S4 Resize keep w-1c
+Key (emacs) D A S4 Resize keep w+1c
+Key (emacs) F A CS4 Resize w+3c keep
+Key (emacs) S A CS4 Resize w-3c keep
+Key (emacs) E A CS4 Resize keep w-3c
+Key (emacs) D A CS4 Resize keep w+3c
+
+Key F A 4 Move w+10p keep
+Key S A 4 Move w-10p keep
+Key E A 4 Move keep w-10p
+Key D A 4 Move keep w+10p
+
+Key F A C4 Move w+50p keep
+Key S A C4 Move w-50p keep
+Key E A C4 Move keep w-50p
+Key D A C4 Move keep w+50p
+
+# # Key X A 4 ResizeMove 50 100 0 0
+# Key X A 4 PipeRead 'echo ResizeMove frame \
+#     $(( $[SCREEN_WIDTH] / 2 ))p 100 0 0'
+# Key C A 4 PipeRead 'echo ResizeMove frame \
+#     $(( $[SCREEN_WIDTH] ))p 100 0 0'
+# Key V A 4 PipeRead 'echo ResizeMove frame \
+#     $(( $[SCREEN_WIDTH] / 2 ))p 100 $(( $[SCREEN_WIDTH] / 2 ))p 0'
+
+# Key X A C4 PipeRead 'echo ResizeMove frame \
+#     $(( $[SCREEN_WIDTH] / 3 ))p 100 0 0'
+# Key C A C4 PipeRead 'echo ResizeMove frame \
+#     $(( $[SCREEN_WIDTH] / 3))p 100 $(( $[SCREEN_WIDTH] / 3))p 0'
+# Key V A C4 PipeRead 'echo ResizeMove frame \
+#     $(( $[SCREEN_WIDTH] / 3 ))p 100 $(( $[SCREEN_WIDTH] - ( $[SCREEN_WIDTH] / 3 ) ))p 0'
+
+# Key X A S4 PipeRead 'echo ResizeMove frame \
+#     $(( $[SCREEN_WIDTH] - ( $[SCREEN_WIDTH] / 3 ) ))p 100 0 0'
+# # Key C A C4 PipeRead 'echo ResizeMove frame \
+# #     $(( $[SCREEN_WIDTH] / 3))p 100 $(( $[SCREEN_WIDTH] / 3))p 0'
+# Key V A S4 PipeRead 'echo ResizeMove frame \
+#     $(( $[SCREEN_WIDTH] - ( $[SCREEN_WIDTH] / 3 ) ))p 100 $(( $[SCREEN_WIDTH] / 3))p 0'
+
+# Key X A 4 ResizeMove 50 100 0 0
+Key M A 4 PipeRead 'echo ResizeMove frame \
+    $(( $[SCREEN_WIDTH] / 2 ))p 100 0 0'
+Key comma A 4 PipeRead 'echo ResizeMove frame \
+    $(( $[SCREEN_WIDTH] ))p 100 0 0'
+Key period A 4 PipeRead 'echo ResizeMove frame \
+    $(( $[SCREEN_WIDTH] / 2 ))p 100 $(( $[SCREEN_WIDTH] / 2 ))p 0'
+
+Key M A C4 PipeRead 'echo ResizeMove frame \
+    $(( $[SCREEN_WIDTH] / 3 ))p 100 0 0'
+Key comma A C4 PipeRead 'echo ResizeMove frame \
+    $(( $[SCREEN_WIDTH] / 3))p 100 $(( $[SCREEN_WIDTH] / 3))p 0'
+Key period A C4 PipeRead 'echo ResizeMove frame \
+    $(( $[SCREEN_WIDTH] / 3 ))p 100 $(( $[SCREEN_WIDTH] - ( $[SCREEN_WIDTH] / 3 ) ))p 0'
+
+Key M A S4 PipeRead 'echo ResizeMove frame \
+    $(( $[SCREEN_WIDTH] - ( $[SCREEN_WIDTH] / 3 ) ))p 100 0 0'
+# Key C A C4 PipeRead 'echo ResizeMove frame \
+#     $(( $[SCREEN_WIDTH] / 3))p 100 $(( $[SCREEN_WIDTH] / 3))p 0'
+Key period A S4 PipeRead 'echo ResizeMove frame \
+    $(( $[SCREEN_WIDTH] - ( $[SCREEN_WIDTH] / 3 ) ))p 100 $(( $[SCREEN_WIDTH] / 3))p 0'
+
+Key R A 4 Refresh
+
+DestroyFunc Vol_Down
+AddToFunc Vol_Down
++ I Exec exec amixer sset Master playback 5%-
+
+DestroyFunc Vol_Up
+AddToFunc Vol_Up
++ I Exec exec amixer sset Master playback 5%+
+
+DestroyFunc Vol_Mute
+AddToFunc Vol_Mute
++ I Exec exec amixer sset Master playback toggle
+
+Key KP_Subtract A 4 Vol_Down
+Key XF86AudioLowerVolume A A Vol_Down
+Key KP_Add A 4 Vol_Up
+Key XF86AudioRaiseVolume A A Vol_Up
+Key KP_Multiply A 4 Vol_Mute
+Key XF86AudioMute A A Vol_Mute
+
+
+Key 1 A 4 GotoDesk 0 0
+Key 2 A 4 GotoDesk 0 1
+Key 3 A 4 GotoDesk 0 2
+Key 4 A 4 GotoDesk 0 3
+Key 5 A 4 GotoDesk 0 4
+Key 6 A 4 GotoDesk 0 5
+
+############
+# Custom window switchers
+
+DestroyFunc List_All
+AddToFunc List_All
++ I Exec exec $HOME/bin/ws
+
+Key tab A 4 List_All
+
+DestroyFunc List_XTerm
+AddToFunc List_XTerm
++ I Exec exec $HOME/bin/ws "xterm"
+
+Key grave A 4 List_XTerm
+
+DestroyFunc List_Emacs
+AddToFunc List_Emacs
++ I Exec exec $HOME/bin/ws "emacs"
+
+Key grave A S4 List_Emacs
+
+DestroyFunc List_Firefox
+AddToFunc List_Firefox
++ I Exec exec $HOME/bin/ws "firefox"
+
+Key grave A M4 List_Firefox

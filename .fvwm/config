@@ -1,0 +1,7 @@
+ImagePath +:${HOME}/.fvwm/images
+# ImagePath /usr/share/icons:~/.fvwm/images
+
+Read modules.fvwm
+Read styles.fvwm
+Read menus.fvwm
+Read functions.fvwm

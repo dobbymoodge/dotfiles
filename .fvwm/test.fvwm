@@ -1,0 +1,6 @@
+DestroyModuleConfig TButtons: *
+*TButtons: Columns 2
+*TButtons: (2x1, Title TestLabel, Back White, Fore Black, Frame 0)
+*TButtons: (Title XTerm, Action 'Exec exec xterm')
+KillModule FvwmButtons TButtons
+Module FvwmButtons TButtons

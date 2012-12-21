@@ -1,0 +1,77 @@
+# DestroyMenuStyle WindowList
+# MenuStyle WindowList Font -*-clean-bold-r-*-*-16-*-*-*-*-*-*-*
+Style * Handles, HandleWidth 3
+Style * FPClickToFocus, FPClickDecorToFocus, FPClickIconToFocus
+Style * FPClickRaisesFocused, FPClickDecorRaisesFocused, FPClickIconRaisesFocused
+Style * FPClickRaisesUnFocused, FPClickDecorRaisesUnFocused, FPClickIconRaisesUnFocused
+Style * FPAllowFocusClickFunction, FPAllowRaiseClickFunction
+Style * FPGrabFocus, FPReleaseFocus
+Style * !FPEnterToFocus, !FPLeaveToUnfocus
+Style * DecorateTransient
+
+# Obey various WM hints:
+# Style * MWMFunctions, MWMDecor, MWMButtons, HintOverride, OLDecor
+Style * MWMFunctions, MWMDecor, HintOverride, OLDecor
+
+DestroyStyle FBFvwmPager
+Style FBFvwmPager NoTitle, Sticky, NeverFocus
+*FBFvwmPager: Font none
+*FBFvwmPager: Rows 2
+*FBFvwmPager: Columns 3
+
+DestroyStyle FvwmButtons
+#Style FvwmButtons ClickToFocus, FPPassFocusClick, NoTitle, NoHandles, BorderWidth 0, Sticky, WindowListSkip
+Style FvwmButtons NeverFocus, NoTitle, NoHandles, BorderWidth 0, Sticky, WindowListSkip
+
+##### From Taviso's config:
+# http://fvwm.org/screenshots/desktops/Tavis_Ormandy-desk-1152x864/fvwmrc
+
++ AddButtonStyle  1 Inactive Vector 4 44x44@3 44x45@3 45x45@3 44x44@3 -- Flat
++ AddButtonStyle  1 ActiveUp Vector 6 44x44@2 44x45@2 45x45@2 44x44@2 99x99@4 \
+        99x0@2 -- Flat
++ AddButtonStyle  1 ActiveDown Vector 8 49x49@2 49x50@2 50x50@2 49x49@2 99x90@4 \
+        99x0@2 99x0@2 0x0@2-- Flat
+
+Style * Button 1
+
+##### Application styles
+
+Style gmrun FPGrabFocus, FPReleaseFocus
+
+# XTerm task-specific styling
+#Style __dev HilightBack #77cc77, HilightFore black
+DestroyStyle __dev
+Style __dev HilightBack aquamarine, HilightFore #003300, Icon ic_menu_monitor-green.png, MiniIcon ic_menu_monitor-16x16-green.png
+#Style __prod HilightBack #cc7777, HilightFore black
+DestroyStyle __prod
+Style __prod HilightBack "light coral", HilightFore #330000, Icon ic_menu_monitor-pink.png, MiniIcon ic_menu_monitor-16x16-pink.png
+
+DestroyStyle __brown
+Style __brown HilightBack tan4, HilightFore black, Icon ic_menu_monitor-orange.png, MiniIcon ic_menu_monitor-16x16-orange.png
+DestroyStyle __irc
+Style __irc HilightBack MediumPurple1, HilightFore black
+
+DestroyStyle __cog
+Style __cog HilightBack DarkSlateGray4, HilightFore 'pale goldenrod'
+DestroyStyle __mail
+Style __mail HilightBack burlywood1, HilightFore blue4, Icon ic_menu_monitor-blue.png, MiniIcon ic_menu_monitor-16x16-blue.png
+
+DestroyStyle __pup
+Style __pup HilightBack #b7cfe7, HilightFore #19334d, Icon ic_menu_monitor-puppet.png, MiniIcon ic_menu_monitor-16x16-puppet.png
+
+DestroyStyle __webdev
+Style __webdev HilightBack #2f351a, HilightFore #f4e9b5, Icon ic_menu_monitor-webdev.png, MiniIcon ic_menu_monitor-16x16-webdev.png
+
+DestroyStyle __cfe
+Style __cfe HilightBack #b5ffd9, HilightFore #0a046d, Icon ic_menu_monitor-cfengine.png, MiniIcon ic_menu_monitor-16x16-cfengine.png
+
+DestroyStyle emacs
+Style emacs MiniIcon emacs22.png
+DestroyStyle XTerm
+Style XTerm TitleAtLeft, Font -*-clean-bold-r-*-*-13-*-*-*-*-*-*-*
+
+DestroyStyle xfce4
+Style xfce4-panel NeverFocus
+
+
+DeskTopSize 1x1
