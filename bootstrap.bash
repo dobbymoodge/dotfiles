@@ -18,9 +18,10 @@ do_link () {
 # Are we in the .dotfiles directory?
 if [ -d ./.git -a "${PWD}" == "${DOTFILES}" ] ; then
     do_link "${DOTFILES}/.config/subtle" "${HOME}/.config/subtle"
-    if do_link "${DOTFILES}/.emacs.d" "${HOME}/.emacs.d" ; then
-        do_link "${DOTFILES}/.emacs.d/init.el" "${HOME}/.emacs"
-    fi
+#    if do_link "${DOTFILES}/.emacs.d" "${HOME}/.emacs.d" ; then
+#        do_link "${DOTFILES}/.emacs.d/init.el" "${HOME}/.emacs"
+#    fi
     do_link "${DOTFILES}/.Xresources" "${HOME}/.Xresources"
     do_link "${DOTFILES}/.tmux.conf" "${HOME}/.tmux.conf"
+#    do_link "${DOTFILES}/.fvwm" "${HOME}/.fvwm"
 fi

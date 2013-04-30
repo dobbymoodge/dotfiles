@@ -47,6 +47,8 @@ AddToMenu Window-Ops "Window Operations" Title
 DestroyMenu PKMenu
 AddToMenu PKMenu "Prefix Key Actions" Title
 + "&S: Resize current window" Menu rszMenu Nop
++ "&W: Window Ops" Menu MenuFvwmWindowOps Nop
++ "&V: Move Window to Page" Menu MenuPageList Nop
 + "&X: XTerm" Exec exec xterm
 + "&G: Gnome-terminal" Exec exec gterm
 + "&R: Run dialog" Exec exec gmrun
@@ -115,14 +117,14 @@ AddToMenu rszMenu "Resize current window" Title
 #################
 DestroyMenu FvwmMoveMethods
 AddToMenu FvwmMoveMethods
-+   "Move to Top"       Pick AnimatedMove keep 0p
-+   "Move to Left"      Pick AnimatedMove 0p keep
-+   "Move to Right"     Pick PipeRead \
++   "Move to &Top"       Pick AnimatedMove keep 0p
++   "Move to &Left"      Pick AnimatedMove 0p keep
++   "Move to &Right"     Pick PipeRead \
         "echo AnimatedMove `expr $[vp.width] - $[w.width]`p keep"
-+   "Move to Bottom"    Pick PipeRead \
++   "Move to &Bottom"    Pick PipeRead \
         "echo AnimatedMove keep `expr $[vp.height] - $[w.height]`p"
 +   ""                              Nop
-+   "Center Window" Pick PipeRead \
++   "&Center Window" Pick PipeRead \
     "echo AnimatedMove `expr \\( $[vp.width] - $[w.width] \\) / 2`p \
     `expr \\( $[vp.height] - $[w.height] \\) / 2`p"
 +   ""                              Nop
@@ -131,18 +133,18 @@ AddToMenu FvwmMoveMethods
 # +   "Pack right" Pick PackWrapperRight
 # +   "Pack down"   Pick PackWrapperDown
 # +   ""                              Nop
-+   "Move To Page" Popup MenuPageList
++   "Move To &Page" Popup MenuPageList
 +   ""                              Nop
-+   "Interactive Move"  Pick Move
++   "&Interactive Move"  Pick Move
 
 DestroyMenu MenuPageList
 AddToMenu MenuPageList
-+ "1"   Pick MoveToDesk 0 0
-+ "2"   Pick MoveToDesk 0 1
-+ "3"   Pick MoveToDesk 0 2
-+ "4"   Pick MoveToDesk 0 3
-+ "5"   Pick MoveToDesk 0 4
-+ "6"   Pick MoveToDesk 0 5
++ "&1"   Pick MoveToDesk 0 0
++ "&2"   Pick MoveToDesk 0 1
++ "&3"   Pick MoveToDesk 0 2
++ "&4"   Pick MoveToDesk 0 3
++ "&5"   Pick MoveToDesk 0 4
++ "&6"   Pick MoveToDesk 0 5
 # + "7"   Pick MoveToPage 0 2
 # + "8"   Pick MoveToPage 1 2
 # + "9"   Pick MoveToPage 2 2
@@ -152,19 +154,19 @@ AddToMenu MenuPageList
 #################
 DestroyMenu MenuFvwmWindowOps
 AddToMenu MenuFvwmWindowOps
-+   "Resize"      Pick Resize
-+   "Iconify"     Pick Iconify
++   "&Resize"      Pick Resize
++   "&Iconify"     Pick Iconify
 # +   "Thumbnail" Pick Thumbnail
-+   "Maximize"    Pick Maximize
-+   "Move"        Popup FvwmMoveMethods
-+   "Shade"       Pick WindowShade Toggle
++   "Ma&ximize"    Pick Maximize
++   "&Move"        Popup FvwmMoveMethods
++   "S&hade"       Pick WindowShade Toggle
 +   ""            Nop
-+   "Stick"       Pick Stick
-+   "Scroll"      Pick Module FvwmScroll
-+   "Refresh"     Pick RefreshWindow
++   "S&tick"       Pick Stick
++   "S&croll"      Pick Module FvwmScroll
++   "Re&fresh"     Pick RefreshWindow
 +   ""            Nop
-+   "Identify"    Pick Module FvwmIdent
-+   "Zoom"        Pick Exec exec xmag -source $[w.width]x$[w.height]+$[w.x]+$[w.y] -mag 2
++   "I&dentify"    Pick Module FvwmIdent
++   "&Zoom"        Pick Exec exec xmag -source $[w.width]x$[w.height]+$[w.x]+$[w.y] -mag 2
 +   ""            Nop
-+   "Close"       Pick Close
++   "Clo&se"       Pick Close
 # +   "Destroy"   Pick Destroy

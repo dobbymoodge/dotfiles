@@ -6,10 +6,10 @@ DestroyFunc Basic-Setup
 AddToFunc Basic-Setup
 + I Module FvwmButtons FBPagerDock
 + I Module FvwmCommandS
-+ I Exec exec xscreensaver
-+ I Exec exec xsetroot -mod 2 2 -fg 'dark slate grey' -bg 'RoyalBlue4'
-+ I Exec exec xfce4-panel
-+ I Exec exec start_workrave
+# + I Exec exec xscreensaver
+# + I Exec exec xsetroot -mod 2 2 -fg 'dark slate grey' -bg 'RoyalBlue4'
+# + I Exec exec xfce4-panel
+# + I Exec exec start_workrave
 + I Echo done with basic setup...
 
 Piperead 'echo SetEnv SCREEN_WIDTH $(( $[vp.width]-61 ))'

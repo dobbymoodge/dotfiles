@@ -5,9 +5,9 @@ DestroyModuleConfig FBPagerDock: *
 
 *FBPagerDock: Rows 32
 *FBPagerDock: Columns 1
-# *FBPagerDock: Geometry 60x80-0+0@s
+*FBPagerDock: Geometry 60x80-0+0@s
 # *FBPagerDock: Geometry 60x640-0+0@s
-*FBPagerDock: Geometry 68x640-0+0@s
+# *FBPagerDock: Geometry 68x640-0+0@s
 *FBPagerDock: BoxSize dumb
 *FBPagerDock: Font None
 *FBPagerDock: Back Grey90
@@ -16,4 +16,4 @@ DestroyModuleConfig FBPagerDock: *
 *FBPagerDock: (1x1+0+0, Swallow(UseOld,Respawn,Close) "fbxctime" `Exec xclock -bg Grey90 -fg black -d -strftime '%H:%M:%S' -update 1 -face 'Fixed-7' -geometry -30000-30000 -title fbxctime`)
 *FBPagerDock: (1x1+0+1, Swallow(UseOld,Respawn,Close) "fbxcdate" `Exec xclock -bg Grey90 -fg black -d -strftime '%m-%d-%Y' -update 60 -face 'Fixed-7' -geometry -30000-30000 -title fbxcdate`)
 *FBPagerDock: (1x2+0+2, Swallow(UseOld,Respawn) FvwmPager 'Module FvwmPager FBFvwmPager 0 5')
-*FBPagerDock: (1x28+0+4, Swallow(UseOld,Respawn,Close) "Conky" `Exec conky`)
+# *FBPagerDock: (1x28+0+4, Swallow(UseOld,Respawn,Close) "Conky" `Exec conky`)

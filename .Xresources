@@ -2,10 +2,11 @@
 ! Xft !
 !!!!!!!
 
-Xft.hintstyle: hintfull
+!Xft.hintstyle: hintfull
+Xft.hintstyle: hintslight
 Xft.hinting: true
 Xft.rgba: rgb
-Xft.dpi: 96
+!Xft.dpi: 96
 
 !!!!!!!!!
 ! XTerm !
@@ -17,14 +18,26 @@ XTerm*metaSendsEscape: true
 XTerm*eightBitInput: false
 XTerm.showBlinkAsBold: true
 
-XTerm*faceName: "Liberation Mono"
-XTerm*faceSize: 8
-XTerm*faceSize1: 6
+XTerm*scrollBar: false
+
+!XTerm*faceName: "Liberation Mono"
+XTerm*faceName: "DejaVu Sans Mono"
+!XTerm*faceName: "Terminus"
+!XTerm*faceName: "Nouveau IBM"
+XTerm*faceSize:  9
+XTerm*faceSize1: 7
 XTerm*faceSize2: 8
-XTerm*faceSize3: 10
-XTerm*faceSize4: 12
-XTerm*faceSize5: 16
-XTerm*faceSize6: 20
+XTerm*faceSize3: 9
+XTerm*faceSize4: 13
+XTerm*faceSize5: 17
+XTerm*faceSize6: 22
+! XTerm*faceSize: 8
+! XTerm*faceSize1: 6
+! XTerm*faceSize2: 8
+! XTerm*faceSize3: 10
+! XTerm*faceSize4: 12
+! XTerm*faceSize5: 16
+! XTerm*faceSize6: 20
 XTerm*utf8: true
 
 !!!!!!!!!
