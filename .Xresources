@@ -6,7 +6,15 @@
 Xft.hintstyle: hintslight
 Xft.hinting: true
 Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
 !Xft.dpi: 96
+!Xft.dpi: 140
+
+!!!!!!!!!
+! Emacs !
+!!!!!!!!!
+
+Emacs*geometry:     120x60
 
 !!!!!!!!!
 ! XTerm !
@@ -21,57 +29,59 @@ XTerm.showBlinkAsBold: true
 XTerm*scrollBar: false
 
 !XTerm*faceName: "Liberation Mono"
-XTerm*faceName: "DejaVu Sans Mono"
+!XTerm*faceName: "DejaVu Sans Mono"
 !XTerm*faceName: "Terminus"
 !XTerm*faceName: "Nouveau IBM"
-XTerm*faceSize:  9
-XTerm*faceSize1: 7
-XTerm*faceSize2: 8
-XTerm*faceSize3: 9
-XTerm*faceSize4: 13
-XTerm*faceSize5: 17
-XTerm*faceSize6: 22
-! XTerm*faceSize: 8
+! XTerm*faceSize:  8
 ! XTerm*faceSize1: 6
-! XTerm*faceSize2: 8
-! XTerm*faceSize3: 10
-! XTerm*faceSize4: 12
-! XTerm*faceSize5: 16
-! XTerm*faceSize6: 20
+! XTerm*faceSize2: 7
+! XTerm*faceSize3: 8
+! XTerm*faceSize4: 13
+! XTerm*faceSize5: 17
+! XTerm*faceSize6: 22
+
+!XTerm*faceSize:  10
+!XTerm*faceSize1: 6
+!XTerm*faceSize2: 7
+!XTerm*faceSize3: 8
+!XTerm*faceSize4: 10
+!XTerm*faceSize5: 13
+!XTerm*faceSize6: 17
+
 XTerm*utf8: true
 
 !!!!!!!!!
 ! URxvt !
 !!!!!!!!!
 
-URxvt*font:             -*-clean-*-*-*-*-12-*-*-*-*-*-iso8859-*
-URxvt*boldFont:         -*-clean-*-*-*-*-12-*-*-*-*-*-iso8859-*
+! URxvt*font:             -*-clean-*-*-*-*-12-*-*-*-*-*-iso8859-*
+! URxvt*boldFont:         -*-clean-*-*-*-*-12-*-*-*-*-*-iso8859-*
 
-URxvt*foreground: #e5e5e5 
-URxvt*background: #1d1d1d
-URxvt*cursorColor: #FFF9EC
-!Black
-*color0: #121212
-*color8: #2e3436
-!Red
-*color1: #a35b66
-*color9: #ab6b74
-!Green
-*color2: #99ab6f
-*color10: #acb792
-!Yellow
-*color3: #ca9733
-*color11: #ccaa69
-!Blue
-*color4: #495d6e
-*color12: #687987
-!Magenta
-*color5: #825969
-*color13: #977381
-!Cyan
-*color6: #839191
-*color14: #98A4A4
-!White
-*color7: #E0E0E0
-*color15: #e5e5e5
+! URxvt*foreground: #e5e5e5 
+! URxvt*background: #1d1d1d
+! URxvt*cursorColor: #FFF9EC
+! !Black
+! *color0: #121212
+! *color8: #2e3436
+! !Red
+! *color1: #a35b66
+! *color9: #ab6b74
+! !Green
+! *color2: #99ab6f
+! *color10: #acb792
+! !Yellow
+! *color3: #ca9733
+! *color11: #ccaa69
+! !Blue
+! *color4: #495d6e
+! *color12: #687987
+! !Magenta
+! *color5: #825969
+! *color13: #977381
+! !Cyan
+! *color6: #839191
+! *color14: #98A4A4
+! !White
+! *color7: #E0E0E0
+! *color15: #e5e5e5
 
