@@ -1,6 +1,7 @@
 #!/bin/bash
 
 DOTFILES="${HOME}/.dotfiles"
+[[ -e "${HOME}/dotfiles" ]] && DOTFILES="${HOME}/dotfiles"
 
 do_link () {
     if [ -e "$2" ] ; then
@@ -17,7 +18,7 @@ do_link () {
 
 # Are we in the .dotfiles directory?
 if [ -d ./.git -a "${PWD}" == "${DOTFILES}" ] ; then
-    do_link "${DOTFILES}/.config/subtle" "${HOME}/.config/subtle"
+#    do_link "${DOTFILES}/.config/subtle" "${HOME}/.config/subtle"
 #    if do_link "${DOTFILES}/.emacs.d" "${HOME}/.emacs.d" ; then
 #        do_link "${DOTFILES}/.emacs.d/init.el" "${HOME}/.emacs"
 #    fi
