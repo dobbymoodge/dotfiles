@@ -1,0 +1,36 @@
+[user]
+    name = dobbymoodge
+    email = jolamb@redhat.com
+[credential]
+    helper = cache
+[alias]
+    st = status -s
+    stat = status
+    ci = commit
+    br = branch
+    cp = cherry-pick
+    brav = branch -avvv
+    co = checkout
+    df = diff
+    lg = log -p
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+    ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+    le = log --oneline --decorate
+    who = shortlog -s --
+    ribbon = tag --force _ribbon origin/master
+    catchup = log --patch --reverse --topo-order _ribbon..origin/master
+    hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+[diff]
+    tool = meld
+[hub]
+	protocol = https
+[push]
+	default = simple
+[github]
+	user = dobbymoodge
+	password = SvelteCalcium95ZooSpore
+	oauth-token = 9819206e5119ab7061fdd16903bed85af6699290
+[init]
+	templatedir = /home/jolamb/.git-templates

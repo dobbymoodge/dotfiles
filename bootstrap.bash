@@ -24,5 +24,8 @@ if [ -d ./.git -a "${PWD}" == "${DOTFILES}" ] ; then
 #    fi
     do_link "${DOTFILES}/.Xresources" "${HOME}/.Xresources"
     do_link "${DOTFILES}/.tmux.conf" "${HOME}/.tmux.conf"
+    do_link "${DOTFILES}/git/.gitconfig" "${HOME}/.gitconfig"
+    do_link "${DOTFILES}/git/.git-templates" "${HOME}/.git-templates"
+
 #    do_link "${DOTFILES}/.fvwm" "${HOME}/.fvwm"
 fi

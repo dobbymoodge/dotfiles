@@ -1,0 +1,15 @@
+#!/bin/bash
+
+FILES_VERIFY_PATTERN='(Gemfile)'
+exec 1>&2
+if MATCHES=`git diff --cached --name-only | grep -E ${FILES_VERIFY_PATTERN}`
+then
+    echo "The following files were prevented from being committed:"
+    echo
+    echo "${MATCHES}"
+    echo
+    echo "To force these changes to commit, run 'git commit --no-verify'"
+    echo
+    echo "To unstage any listed files from this commit, run 'git reset <filepath>'"
+    exit 1
+fi
