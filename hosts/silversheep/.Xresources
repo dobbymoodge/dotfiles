@@ -1,0 +1,126 @@
+!!!!!!!
+! Xft !
+!!!!!!!
+
+! Xft.hintstyle: hintslight
+! Xft.hinting: true
+! Xft.rgba: rgb
+! Xft.lcdfilter: lcddefault
+!Xft.dpi: 96
+!Xft.dpi: 140
+
+!!!!!!!!!
+! Emacs !
+!!!!!!!!!
+
+Emacs*geometry:     120x60
+
+!!!!!!!!!
+! XTerm !
+!!!!!!!!!
+
+XTerm.VT100.background: black
+XTerm.VT100.foreground: lightgrey
+XTerm*metaSendsEscape: true
+XTerm*eightBitInput: false
+XTerm.showBlinkAsBold: true
+
+XTerm*scrollBar: false
+
+! keyboard shortcuts for font sizes!
+XTerm.VT100.translations: #override \
+Super <Key> minus: smaller-vt-font() \n\
+Super <Key> plus: larger-vt-font() \n\
+Super <Key> 0: set-vt-font(d) \n
+
+
+!XTerm*faceName: "Liberation Mono"
+!XTerm*faceName: "DejaVu Sans Mono"
+!XTerm*faceName: "Terminus"
+!XTerm*faceName: "Nouveau IBM"
+! XTerm*faceName: "Fire Mono Medium-12"
+!XTerm*faceName: xft:Px437 ATI 8x16
+XTerm*faceName: xft:Fantasque Sans Mono
+XTerm*faceSize:  12
+XTerm*faceSize1: 10
+XTerm*faceSize2: 11
+XTerm*faceSize3: 12
+XTerm*faceSize4: 18
+XTerm*faceSize5: 24
+XTerm*faceSize6: 36
+
+!XTerm*faceSize:  10
+!XTerm*faceSize1: 6
+!XTerm*faceSize2: 7
+!XTerm*faceSize3: 8
+!XTerm*faceSize4: 10
+!XTerm*faceSize5: 13
+!XTerm*faceSize6: 17
+
+XTerm*utf8: true
+
+! Default XTerm blue is too dark on black backgrounds
+XTerm*color4: DodgerBlue3
+XTerm*color12: DodgerBlue1
+
+URxvt*color4: DodgerBlue3
+URxvt*color12: DodgerBlue1
+
+!!!!!!!!!
+! URxvt !
+!!!!!!!!!
+
+! URxvt*font:             -*-clean-*-*-*-*-12-*-*-*-*-*-iso8859-*
+! URxvt*boldFont:         -*-clean-*-*-*-*-12-*-*-*-*-*-iso8859-*
+
+! URxvt*foreground: #e5e5e5 
+! URxvt*background: #1d1d1d
+! URxvt*cursorColor: #FFF9EC
+! !Black
+! *color0: #121212
+! *color8: #2e3436
+! !Red
+! *color1: #a35b66
+! *color9: #ab6b74
+! !Green
+! *color2: #99ab6f
+! *color10: #acb792
+! !Yellow
+! *color3: #ca9733
+! *color11: #ccaa69
+! !Blue
+! *color4: #495d6e
+! *color12: #687987
+! !Magenta
+! *color5: #825969
+! *color13: #977381
+! !Cyan
+! *color6: #839191
+! *color14: #98A4A4
+! !White
+! *color7: #E0E0E0
+! *color15: #e5e5e5
+URxvt.cursorBlink: true
+URxvt.scrollBar: false
+
+URxvt.font: xft:Fantasque Sans Mono:size=12
+URxvt.perl-ext-common: default,tabbed,matcher,resize-font,-tabbed
+URxvt.keysym.4-minus:     resize-font:smaller
+URxvt.keysym.4-equal:      resize-font:bigger
+URxvt.keysym.4-0:     resize-font:reset
+URxvt.keysym.4-question:  resize-font:show
+
+URxvt.url-launcher: /home/jolamb/bin/arg2clip
+URxvt.matcher.button: 1
+URxvt.keysym.4-u: perl:matcher:last
+URxvt.keysym.4-M-u: perl:matcher:list
+URxvt.keysym.4-C-M-u: perl:matcher:select
+
+URxvt.background: black
+URxvt.foreground: lightgrey
+
+URxvt.color4: DodgerBlue3
+URxvt.color12: DodgerBlue1
+
+URxvt.keysym.C-0x3b: string:\030@c;
+URxvt.keysym.C-0x27: string:\030@c\047
