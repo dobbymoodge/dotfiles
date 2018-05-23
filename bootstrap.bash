@@ -13,8 +13,8 @@ do_link () {
 	    fi
         return 1
     else
-	  # ln -s "$1" "$2"
-      echo "ln -s \"$1\" \"$2\""
+	  ln -s "$1" "$2"
+      # echo "ln -s \"$1\" \"$2\""
     fi
 }
 
@@ -44,6 +44,6 @@ if [ -d ./.git -a "${PWD}" == "${DOTFILES}" ] ; then
     host_link ".tmux.conf" "${HOME}/.tmux.conf"
     host_link "git/.gitconfig" "${HOME}/.gitconfig"
     host_link "git/.git-templates" "${HOME}/.git-templates"
-
+    host_link "bin/synovce" "${HOME}/bin/synovce"
     host_link ".fvwm" "${HOME}/.fvwm"
 fi

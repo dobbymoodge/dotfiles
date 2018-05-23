@@ -1,0 +1,67 @@
+#!/usr/bin/bash
+
+LOGFILE=/tmp/jolambsyn.log
+DEBUGLEVEL="INFO"
+SYNERGYC_CMD="synergyc --no-daemon --debug ${DEBUGLEVEL} 127.0.0.1"
+
+on_vpn() {
+  ip addr | grep -q tun0 && pgrep -f /usr/sbin/openvpn > /dev/null
+}
+
+synergyc_running () {
+  # pgrep -f "synergyc"
+  pgrep -f "^${SYNERGYC_CMD}$"
+}
+
+setup_logfile () {
+  # rm -f "${LOGFILE}"
+  # local old_umask=$(umask)
+  # umask 0166
+  # touch "${LOGFILE}"
+  # umask "${old_umask}"
+  echo "" > "${LOGFILE}"
+  chmod 600 "${LOGFILE}"
+}
+
+unstick_loop () {
+  tail -n0 -F "${LOGFILE}" | \
+    { while true
+      do read FIRST SECOND THIRD
+         if [[ "${THIRD}" == "entering screen" ]]
+         then
+           DISPLAY=:0 unstick_keys
+           # echo ran unstick_keys >> $LOGFILE
+         # else
+           # echo "DEBUG: ${FIRST} ${SECOND} ${THIRD}"
+         fi
+         sleep 0.2
+      done ; }
+}
+
+start_synergy() {
+  # set -x
+  if ! synergyc_running
+  then
+     setup_logfile
+     echo "Restarting synergyc with \"${SYNERGYC_CMD}\""
+     ${SYNERGYC_CMD} >> "${LOGFILE}" &
+     echo $! > synpid
+       fi
+     # set +x
+}
+
+unstick_loop &
+
+while true
+do
+  if on_vpn
+  then
+    echo "On VPN, retrying in 5 minutes"
+    sleep 300
+  else
+    start_synergy
+    ssh -oControlMaster=no -oControlPath=/dev/null -L24800:127.0.0.1:24800 -o ServerAliveInterval=1 -o ServerAliveCountMax=1 ovce
+    echo "Disconnected, retrying in 5 seconds..."
+    sleep 5
+  fi
+done
